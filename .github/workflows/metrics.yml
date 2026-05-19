@@ -4,9 +4,9 @@ on:
   # Permite execução manual do workflow
   workflow_dispatch:
 
-  # Executa automaticamente todo dia
+  # Executa automaticamente todo dia às 6h da manhã (UTC)
   schedule:
-    - cron: "0 6 * * *"
+    - cron: '47 14 * * *'
 
 jobs:
   metrics:
