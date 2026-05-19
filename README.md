@@ -1,5 +1,10 @@
 ## Olá 👋
 
+![Metrics](./github-metrics.svg)
+
+<br>
+<br>
+
 ### 📓My qualifications:
 
 ![C++](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
@@ -18,8 +23,3 @@
 
 ![Unity](https://img.shields.io/badge/Unity-100000?style=for-the-badge&logo=unity)
 ![Blender](https://img.shields.io/badge/blender-%23F5792A.svg?style=for-the-badge&logo=blender&logoColor=white)
-
-<br>
-<br>
-
-![Metrics](./github-metrics.svg)
