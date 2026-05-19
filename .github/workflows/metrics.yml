@@ -3,33 +3,30 @@ name: GitHub Metrics
 on:
   # Permite execução manual do workflow
   workflow_dispatch:
-  push: {branches: ["master", "main"]}
+
   # Executa automaticamente todo dia às 6h da manhã (UTC)
   schedule:
     - cron: '47 14 * * *'
 
 jobs:
-  github-metrics:
+  metrics:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+
     steps:
       - uses: lowlighter/metrics@latest
         with:
-          # Your GitHub token
-          # The following scopes are required:
-          #  - public_access (default scope)
-          # The following additional scopes may be required:
-          #  - read:org      (for organization related metrics)
-          #  - read:user     (for user related data)
-          #  - read:packages (for some packages related data)
-          #  - repo          (optional, if you want to include private repositories)
+          # Token de autenticação (obrigatório)
           token: ${{ secrets.METRICS_TOKEN }}
 
-          # Options
+          # Seu usuário do GitHub
           user: Danielfp1
+
+          # Options
           template: classic
           base: header, activity, metadata
+          base_indepth: yes
           commits_authoring: danielfp.pc@hotmail.com,daniel.figueiredo@seduc.go.gov.br
           config_display: large
           config_timezone: America/Sao_Paulo
@@ -41,7 +38,9 @@ jobs:
           plugin_languages_analysis_timeout_repositories: 7.5
           plugin_languages_categories: markup, programming
           plugin_languages_colors: github
+          plugin_languages_indepth: yes
           plugin_languages_limit: 8
+          plugin_languages_other: yes
           plugin_languages_recent_categories: markup, programming
           plugin_languages_recent_days: 14
           plugin_languages_recent_load: 300
@@ -52,15 +51,8 @@ jobs:
           plugin_leetcode_limit_skills: 10
           plugin_leetcode_sections: solved
           plugin_leetcode_user: daniefp1
-          plugin_steam: yes
-          plugin_steam_achievements_limit: 2
-          plugin_steam_games_limit: 1
-          plugin_steam_playtime_threshold: 2
-          plugin_steam_recent_games_limit: 1
-          plugin_steam_sections: player, most-played
-          plugin_steam_user: daniefp_
-          plugin_tweets: yes
-          plugin_tweets_attachments: yes
-          plugin_tweets_limit: 3
-          plugin_tweets_user: danielfp_
+          plugin_lines: yes
+          plugin_lines_history_limit: 1
+          plugin_lines_repositories_limit: 4
+          plugin_lines_sections: base
           repositories_forks: yes
